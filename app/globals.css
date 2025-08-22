@@ -1,0 +1,86 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 204 70% 53%;
+    --accent: 171 70% 33%;
+    --bg: 210 36% 96%;
+    --surface: 0 0% 100%;
+    --text: 215 25% 27%;
+    --muted: 215 15% 50%;
+  }
+  
+  body {
+    @apply bg-bg text-text font-sans;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary hover:bg-primary/90 text-white px-4 py-3 rounded-md transition-colors duration-200 font-medium;
+  }
+  
+  .btn-secondary {
+    @apply bg-accent hover:bg-accent/90 text-white px-4 py-3 rounded-md transition-colors duration-200 font-medium;
+  }
+  
+  .btn-outline {
+    @apply border border-primary text-primary hover:bg-primary hover:text-white px-4 py-3 rounded-md transition-colors duration-200 font-medium;
+  }
+  
+  .card {
+    @apply bg-surface border border-gray-200 rounded-lg p-6 shadow-card;
+  }
+  
+  .frame-container {
+    @apply bg-surface min-h-screen w-full max-w-md mx-auto px-4 py-4;
+  }
+  
+  .activity-card {
+    @apply card space-y-4 animate-fade-in;
+  }
+  
+  .score-display {
+    @apply text-center p-6 rounded-lg;
+  }
+  
+  .score-positive {
+    @apply bg-green-50 border-2 border-green-200 text-green-800;
+  }
+  
+  .score-neutral {
+    @apply bg-blue-50 border-2 border-blue-200 text-blue-800;
+  }
+  
+  .score-negative {
+    @apply bg-orange-50 border-2 border-orange-200 text-orange-800;
+  }
+  
+  .mood-selector {
+    @apply grid grid-cols-5 gap-2 p-4;
+  }
+  
+  .mood-emoji {
+    @apply text-3xl p-3 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer text-center;
+  }
+  
+  .mood-emoji.selected {
+    @apply bg-primary text-white;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
