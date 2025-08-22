@@ -1,4 +1,3 @@
-
 "use client";
 
 interface MoodSelectorProps {
@@ -21,17 +20,21 @@ export function MoodSelector({
   ];
 
   return (
-    <div className="mood-selector">
+    <div className="mood-selector" role="radiogroup" aria-label="Select your current mood">
       {moods.map((mood) => (
         <button
           key={mood.value}
           className={`mood-emoji ${selectedMood === mood.value ? 'selected' : ''}`}
           onClick={() => onMoodSelect(mood.value)}
+          aria-label={`Mood: ${mood.label}`}
+          aria-checked={selectedMood === mood.value}
+          role="radio"
+          tabIndex={0}
         >
           <div className="text-center">
-            <div className="text-3xl mb-1">{mood.emoji}</div>
+            <div className="text-2xl sm:text-3xl mb-1">{mood.emoji}</div>
             {variant === 'text' && (
-              <div className="text-xs text-muted">{mood.label}</div>
+              <div className="text-xs text-muted dark:text-gray-300">{mood.label}</div>
             )}
           </div>
         </button>

@@ -1,6 +1,6 @@
-
 module.exports = {
   content: ['./app/**/*.{js,ts,jsx,tsx,mdx}'],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -28,6 +28,9 @@ module.exports = {
         'fade-in': 'fadeIn 200ms ease-in-out',
         'slide-up': 'slideUp 200ms ease-in-out',
         'pulse-slow': 'pulse 3s ease-in-out infinite',
+        'bounce-light': 'bounce 1s ease-in-out 2',
+        'scale-in': 'scaleIn 200ms ease-in-out',
+        'slide-in-right': 'slideInRight 200ms ease-in-out',
       },
       typography: {
         display: ['text-3xl', 'font-semibold'],
